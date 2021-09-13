@@ -10,6 +10,8 @@ for word in words:
     else:
         word_to_count[word] = 1
 longest_length = max(word_lengths)
+words = list(word_to_count.keys())
+words.sort()
 # print(word_to_count)
-for word, count in word_to_count.items():
-    print(f"{word:{longest_length}} : {count}")
+for word in words:
+    print(f"{word:{longest_length}} : {word_to_count[word]}")
