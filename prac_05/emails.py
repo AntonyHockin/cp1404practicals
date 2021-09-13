@@ -3,7 +3,7 @@ def main():
     email = input("Email: ")
     while email != "":
         name = strip_name_from_email(email)
-        confirm = input(f"Is you name {name}? (Y/n)")
+        confirm = input(f"Is you name {name}? (Y/n) ")
         if confirm.upper() != "Y" and confirm != "":
             name = input("Name: ")
         email_to_name[email] = name
