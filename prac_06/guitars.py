@@ -5,34 +5,30 @@ def main():
     print("My Guitars!")
     guitars = []
 
-    name = get_input("Name: ")
+    name = input("Name: ")
     while name:
-        year = get_input("Year: ")
-        cost = get_input("Cost: ")
+        year = int(input("Year: "))
+        cost = float(input("Cost: "))
         guitars.append(Guitar(name, year, cost))
         print(f"{name} ({year}) : ${cost} added")
-        name = get_input("Name: ")
+        name = input("Name: ")
     guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
     print("These are my guitars: ")
-    counter = 1
-    for guitar in guitars:
+    for i, guitar in enumerate(guitars):
         if guitar.is_vintage():
             vintage_string = "(vintage)"
         else:
             vintage_string = ""
-        print(f"Guitar {counter}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_string}")
-        counter += 1
-
-
-def get_input(prompt):
-    if prompt == "Name: ":
-        data = input(prompt)
-    elif prompt == "Year: ":
-        data = int(input(prompt))
-    else:
-        data = float(input(prompt))
-    return data
+        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_string}")
+    # counter = 1
+    # for guitar in guitars:
+    #     if guitar.is_vintage():
+    #         vintage_string = "(vintage)"
+    #     else:
+    #         vintage_string = ""
+    #     print(f"Guitar {counter}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f} {vintage_string}")
+    #     counter += 1
 
 
 if __name__ == '__main__':
